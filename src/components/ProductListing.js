@@ -36,7 +36,7 @@ const ProductPage = () => {
       "https://api.imgur.com/3/gallery/hot/viral/day/2?showViral=true&mature=false&album_previews=false",
       requestOptions
     )
-      // .then((response) => response.text())
+      .then((response) => response.text())
       .then((result) => console.log(result))
       .catch((error) => console.log("error", error));
     console.log(response);
