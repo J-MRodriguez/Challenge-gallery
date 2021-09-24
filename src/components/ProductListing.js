@@ -34,17 +34,17 @@ const ProductPage = () => {
   };
 
   const fetchGallery = async () => {
-    const response = await fetch(
+    const result = await fetch(
       "https://api.imgur.com/3/gallery/hot/viral/day/2?showViral=true&mature=false&album_previews=false",
       requestOptions
     )
       .then((response) => response.json())
       .then((result) => console.log(result))
       .catch((error) => console.log("error", error));
-    console.log(response.data.data);
+
     // console.log(data.data);
     // dispatch(setProducts(data.data));
-    dispatch(setProducts(response.data));
+    dispatch(setProducts(result.data));
   };
 
   useEffect(() => {
