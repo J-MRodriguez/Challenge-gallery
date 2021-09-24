@@ -7,9 +7,10 @@ const ProductComponent = () => {
   const gallery = useSelector((state) => state.allProducts.products);
 
   const renderList = gallery.map((product) => {
-    const { id, title, images } = product;
+    const { images } = product;
     let img = images[0].link;
     let description = images[0].description;
+    let id = images[0].id;
 
     // setTimeout(() => {
     //   console.log(images[0].link);
@@ -23,7 +24,7 @@ const ProductComponent = () => {
           <div className="ui link cards">
             <div className="card">
               <div className="image">
-                <img src={img} alt={title} />
+                <img src={img} alt={description} />
               </div>
               <div className="content">
                 <div className="header">{description}</div>
