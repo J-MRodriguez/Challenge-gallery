@@ -5,8 +5,7 @@ import { useSelector } from "react-redux";
 const ProductComponent = () => {
   const gallery = useSelector((state) => state.allProducts.products);
   const renderList = gallery.map((product) => {
-    const { id, title, images } = product;
-    const { link } = images[0];
+    const { id, title, link } = product;
     return (
       <div className="four wide column" key={id}>
         <Link to={`/product/${id}`}>
