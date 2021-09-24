@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useEffect } from "react";
-// import axios from "axios";
+import axios from "axios";
 // import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -33,24 +33,12 @@ const ProductDetails = () => {
   };
 
   const fetchProductDetail = async (id) => {
-    // const response = await axios
-    //   .get(`https://api.imgur.com/3/image/${id}`)
-    //   .catch((err) => {
-    //     console.log("Err: ", err);
-    //   });
-    // dispatch(selectedProduct(response.data));
-    // dispatch(selectedProduct(data.data));
-    const response = await fetch(
-      `https://api.imgur.com/3/image/${id}`,
-      requestOptions
-    )
-      // .then((response) => response.text())
-      .then((result) => console.log(result))
-      .catch((error) => console.log("error", error));
-    console.log(response);
-    // console.log(data.data);
-    // dispatch(setProducts(data.data));
-    dispatch(selectedProduct(response));
+    const response = await axios
+      .get(`https://api.imgur.com/3/image/${id}`, requestOptions)
+      .catch((err) => {
+        console.log("Err: ", err);
+      });
+    dispatch(selectedProduct(response.data));
   };
 
   // useEffect(() => {
