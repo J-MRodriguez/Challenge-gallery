@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect } from "react";
-import axios from "axios";
+// import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 // import { useSelector } from "react-redux";
 import { setProducts } from "../redux/actions/productsActions";
@@ -33,40 +33,41 @@ const ProductPage = () => {
     // redirect: "follow",
   };
 
-  // const fetchGallery = async () => {
-  //   const response = await fetch(
-  //     "https://api.imgur.com/3/gallery/hot/viral/day/2?showViral=true&mature=false&album_previews=false",
-  //     requestOptions
-  //   )
-  //     .then((response) => response.text())
-  //     .then((result) => console.log(result))
-  //     .catch((error) => console.log("error", error));
-  //   console.log(response.data);
-  //   // console.log(data.data);
-  //   // dispatch(setProducts(data.data));
-  //   dispatch(setProducts(response.data));
-  // };
-
-  // useEffect(() => {
-  //   fetchGallery();
-  // }, []);
-
-  const fetchProducts = async () => {
-    const response = await axios
-      .get(
-        "https://api.imgur.com/3/gallery/hot/viral/day/2?showViral=true&mature=false&album_previews=false",
-        requestOptions
-      )
-      .catch((err) => {
-        console.log("Err: ", err);
-      });
-    // console.log(response.data());
-    dispatch(setProducts(response));
+  const fetchGallery = async () => {
+    const response = await fetch(
+      "https://api.imgur.com/3/gallery/hot/viral/day/2?showViral=true&mature=false&album_previews=false",
+      requestOptions
+    )
+      .then((response) => response.json())
+      .then((result) => console.log(result))
+      .catch((error) => console.log("error", error));
+    console.log(response.data);
+    // console.log(data.data);
+    // dispatch(setProducts(data.data));
+    dispatch(setProducts(response.data));
   };
 
   useEffect(() => {
-    fetchProducts();
+    fetchGallery();
   }, []);
+
+  // const fetchProducts = async () => {
+  //   // const response = await axios
+  //   //   .get(
+  //   //     "https://api.imgur.com/3/gallery/hot/viral/day/2?showViral=true&mature=false&album_previews=false",
+  //   //     requestOptions
+  //   //   )
+  //   //   .catch((err) => {
+  //   //     console.log("Err: ", err);
+  //   //   });
+  //   // console.log(response.data());
+  //   dispatch(setProducts(data.data));
+  //   // dispatch(setProducts(response));
+  // };
+
+  // useEffect(() => {
+  //   fetchProducts();
+  // }, []);
 
   console.log("Products :", products);
   return (

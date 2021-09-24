@@ -1,13 +1,13 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useEffect } from "react";
-// import axios from "axios";
+import axios from "axios";
 // import { useParams } from "react-router-dom";
-import { useSelector } from "react-redux";
-// import { useDispatch, useSelector } from "react-redux";
-import // selectedProduct,
-// removeSelectedProduct,
-"../redux/actions/productsActions";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  selectedProduct,
+  // removeSelectedProduct,
+} from "../redux/actions/productsActions";
 // import * as data from "./../Data/gallery.json";
 
 const ProductDetails = () => {
@@ -15,32 +15,32 @@ const ProductDetails = () => {
   let product = useSelector((state) => state.product);
 
   const { link, title, category, description } = product;
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
-  // const requestOptions = {
-  //   method: "GET",
-  //   headers: {
-  //     Authorization: "Client-ID c2c79f20f313af8",
-  //   },
-  //   params: {
-  //     showViral: "true",
-  //     mature: "false",
-  //     album_previews: "false",
-  //   },
-  //   // headers: myHeaders,
-  //   // // body: formdata,
-  //   // redirect: "follow",
-  // };
+  const requestOptions = {
+    method: "GET",
+    headers: {
+      Authorization: "Client-ID c2c79f20f313af8",
+    },
+    params: {
+      showViral: "true",
+      mature: "false",
+      album_previews: "false",
+    },
+    // headers: myHeaders,
+    // // body: formdata,
+    // redirect: "follow",
+  };
 
-  // const fetchProductDetail = async (id) => {
-  //   const response = await axios
-  //     .get(`https://api.imgur.com/3/image/${id}`, requestOptions)
-  //     .catch((err) => {
-  //       console.log("Err: ", err);
-  //     });
-  //   const data = response.data;
-  //   dispatch(selectedProduct(data));
-  // };
+  const fetchProductDetail = async (id) => {
+    const response = await axios
+      .get(`https://api.imgur.com/3/image/${id}`, requestOptions)
+      .catch((err) => {
+        console.log("Err: ", err);
+      });
+    const data = response.data;
+    dispatch(selectedProduct(data));
+  };
 
   // useEffect(() => {
   //   if (productId && productId !== "") fetchProductDetail(productId);
@@ -49,7 +49,7 @@ const ProductDetails = () => {
   //   };
   // }, [productId]);
   useEffect(() => {
-    // fetchProductDetail();
+    fetchProductDetail();
   }, []);
   return (
     <div className="ui grid container">
