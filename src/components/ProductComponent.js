@@ -5,8 +5,8 @@ import { useSelector } from "react-redux";
 const ProductComponent = () => {
   const products = useSelector((state) => state.allProducts.products);
 
-  const renderList = products.map(({ id, title, link }) => {
-    // const { id, title, link } = product;
+  const renderList = products.data.map((product) => {
+    const { id, title, link } = product;
     return (
       <div className="four wide column" key={id}>
         <Link to={`/product/${id}`}>
