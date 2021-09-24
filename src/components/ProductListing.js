@@ -62,7 +62,7 @@ const ProductPage = () => {
       });
     // console.log(response.data());
 
-    dispatch(setProducts(response.data));
+    dispatch(setProducts(response));
   };
 
   useEffect(() => {
