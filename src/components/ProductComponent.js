@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 
 const ProductComponent = () => {
   const gallery = useSelector((state) => state.allProducts.products);
-  const gall = gallery.data;
+  const gall = gallery.Object.data;
   const renderList = gall.map((product) => {
     const { id, title, link } = product;
     return (
