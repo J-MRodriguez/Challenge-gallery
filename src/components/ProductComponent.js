@@ -6,7 +6,7 @@ const ProductComponent = () => {
   const gallery = useSelector((state) => state.allProducts.products);
   const renderList = gallery.map((product) => {
     const { id, title, images } = product;
-    console.log(images);
+    console.log(images[0]);
     return (
       <div className="four wide column" key={id}>
         <Link to={`/product/${id}`}>
