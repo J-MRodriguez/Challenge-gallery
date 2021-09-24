@@ -61,8 +61,7 @@ const ProductPage = () => {
         console.log("Err: ", err);
       });
     // console.log(response.data());
-    const data = response.data;
-    dispatch(setProducts(data));
+    dispatch(setProducts(response));
   };
 
   useEffect(() => {
