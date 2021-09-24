@@ -33,11 +33,12 @@ const ProductDetails = () => {
   };
 
   const fetchProductDetail = async (id) => {
-    const { data } = await axios
+    const response = await axios
       .get(`https://api.imgur.com/3/image/${id}`, requestOptions)
       .catch((err) => {
         console.log("Err: ", err);
       });
+    const data = response.data;
     dispatch(selectedProduct(data));
   };
 

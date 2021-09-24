@@ -3,9 +3,8 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 const ProductComponent = () => {
-  const gallery = useSelector((state) => state.allProducts.products.data);
-  const gall = Array.from(gallery);
-  const renderList = gall.map((product) => {
+  const gallery = useSelector((state) => state.allProducts.products);
+  const renderList = gallery.map((product) => {
     const { id, title, link } = product;
     return (
       <div className="four wide column" key={id}>
