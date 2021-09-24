@@ -6,14 +6,14 @@ const ProductComponent = () => {
   const gallery = useSelector((state) => state.allProducts.products);
   const renderList = gallery.map((product) => {
     const { id, title, images } = product;
-    const { link } = images[[0]];
+    console.log(images);
     return (
       <div className="four wide column" key={id}>
         <Link to={`/product/${id}`}>
           <div className="ui link cards">
             <div className="card">
               <div className="image">
-                <img src={link} alt={title} />
+                {/* <img src={link.link} alt={title} /> */}
               </div>
               <div className="content">
                 <div className="header">{title}</div>
