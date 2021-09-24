@@ -50,7 +50,7 @@ const ProductDetails = () => {
     console.log(response);
     // console.log(data.data);
     // dispatch(setProducts(data.data));
-    dispatch(selectedProduct(response.data));
+    dispatch(selectedProduct(response));
   };
 
   // useEffect(() => {

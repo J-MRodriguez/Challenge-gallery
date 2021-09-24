@@ -41,7 +41,7 @@ const ProductPage = () => {
       .then((response) => response.text())
       .then((result) => console.log(result))
       .catch((error) => console.log("error", error));
-    console.log(response);
+    console.log(response.data);
     // console.log(data.data);
     // dispatch(setProducts(data.data));
     dispatch(setProducts(response.data));
