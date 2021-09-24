@@ -39,7 +39,7 @@ const ProductPage = () => {
       requestOptions
     )
       .then((response) => response.json())
-      .then((result) => console.log(result))
+      .then((result) => console.log(result.data))
       .catch((error) => console.log("error", error));
 
     // console.log(data.data);
