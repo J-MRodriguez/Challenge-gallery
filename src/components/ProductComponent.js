@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
@@ -6,8 +7,13 @@ const ProductComponent = () => {
   const gallery = useSelector((state) => state.allProducts.products);
   const renderList = gallery.map((product) => {
     const { id, title, images } = product;
+    let img = images;
+    let description = "";
+
     setTimeout(() => {
       console.log(images[0].link);
+      let img = images[0].link;
+      let description = images[0].description;
     }, 0.5);
 
     return (
@@ -16,10 +22,14 @@ const ProductComponent = () => {
           <div className="ui link cards">
             <div className="card">
               <div className="image">
-                {/* <img src={link.link} alt={title} /> */}
+                {img ? (
+                  <img src={img} alt={title} />
+                ) : (
+                  <img src={images} alt={title} />
+                )}
               </div>
               <div className="content">
-                <div className="header">{title}</div>
+                <div className="header">{description}</div>
                 {/* <div className="meta price">$ {price}</div>
                 <div className="meta">{category}</div> */}
               </div>
