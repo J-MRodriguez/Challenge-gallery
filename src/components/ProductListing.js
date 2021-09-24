@@ -52,7 +52,7 @@ const ProductPage = () => {
   // }, []);
 
   const fetchProducts = async () => {
-    const response = await axios
+    const { data } = await axios
       .get(
         "https://api.imgur.com/3/gallery/hot/viral/day/2?showViral=true&mature=false&album_previews=false",
         requestOptions
@@ -60,8 +60,8 @@ const ProductPage = () => {
       .catch((err) => {
         console.log("Err: ", err);
       });
-    console.log(response.data);
-    dispatch(setProducts(response.data));
+    // console.log(response.data());
+    dispatch(setProducts(data));
   };
 
   useEffect(() => {
