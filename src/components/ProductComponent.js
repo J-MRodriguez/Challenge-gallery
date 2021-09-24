@@ -14,7 +14,7 @@ const ProductComponent = () => {
       console.log(images[0].link);
       let img = images[0].link;
       let description = images[0].description;
-    }, 0.5);
+    }, 0.1);
 
     return (
       <div className="four wide column" key={id}>
