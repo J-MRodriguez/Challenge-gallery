@@ -7,8 +7,8 @@ const ProductComponent = () => {
   const renderList = gallery.map((product) => {
     const { id, title, images } = product;
     setTimeout(() => {
-      console.log(images[0]);
-    }, 0);
+      console.log(images[0].link);
+    }, 0.5);
 
     return (
       <div className="four wide column" key={id}>
