@@ -39,12 +39,12 @@ const ProductPage = () => {
       requestOptions
     )
       .then((response) => response.json())
-      .then((result) => console.log(result.data))
+      .then((result) => dispatch(setProducts(result.data)))
       .catch((error) => console.log("error", error));
 
     // console.log(data.data);
     // dispatch(setProducts(data.data));
-    dispatch(setProducts(result.data));
+    console.log(result);
   };
 
   useEffect(() => {
