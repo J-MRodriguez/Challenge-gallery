@@ -5,9 +5,16 @@ import { useSelector } from "react-redux";
 
 const ProductComponent = () => {
   const gallery = useSelector((state) => state.allProducts.products);
+  for (const product of gallery) {
+    const { images } = product;
+    let img = images[0].link;
+    let description = images[0].description;
+    let id = images[0].id;
+  }
 
   const renderList = gallery.map((product) => {
     const { images } = product;
+
     let img = images[0].link;
     let description = images[0].description;
     let id = images[0].id;
