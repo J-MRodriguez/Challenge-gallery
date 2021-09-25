@@ -36,12 +36,13 @@ const ProductPage = () => {
     const result = await fetch(
       "https://api.imgur.com/3/gallery/hot/viral/day/2?showViral=true&mature=false&album_previews=false",
       requestOptions
-    ).then((response) => response.json());
+    )
+      .then((response) => response.json())
+      .catch((error) => console.log("error", error));
     const post = result.data;
     dispatch(setProducts(post));
     // .then((response) => response.json())
     // .then((result) => dispatch(setProducts(result.data)))
-    // .catch((error) => console.log("error", error));
 
     // console.log(data.data);
     // dispatch(setProducts(data.data));
