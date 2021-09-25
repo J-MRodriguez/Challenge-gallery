@@ -44,8 +44,7 @@ const ProductPage = () => {
     // console.log(post);
     const img = await post.map((i) => {
       const { images } = i;
-      const arr = [...images];
-      return arr;
+      return images;
     });
     dispatch(setImages(img));
     console.log(img);
