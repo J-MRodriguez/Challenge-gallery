@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 // import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 // import { useSelector } from "react-redux";
-import { setProducts } from "../redux/actions/productsActions";
+import { setImages } from "../redux/actions/productsActions";
 import ProductComponent from "./ProductComponent";
 import Menu from "./Menu";
 
@@ -39,7 +39,14 @@ const ProductPage = () => {
       requestOptions
     )
       .then((response) => response.json())
-      .then((result) => dispatch(setProducts(result.data)))
+      // .then((result) => dispatch(setProducts(result.data)))
+      .then((result) => {
+        const data = result.data;
+        data.map((image) => {
+          const { images } = image;
+          return dispatch(setImages(images));
+        });
+      })
       .catch((error) => console.log("error", error));
 
     // console.log(data.data);

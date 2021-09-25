@@ -1,4 +1,32 @@
 import { ActionTypes } from "../constants/action-types";
+
+const initialStateGall = {
+  gallery: [],
+};
+
+const initialStateImg = {
+  images: [],
+};
+
+export const galleryReducer = (state = initialStateGall, { type, payload }) => {
+  switch (type) {
+    case ActionTypes.SET_GALLERY:
+      return { ...state, gallery: payload };
+    default:
+      return state;
+  }
+};
+
+export const imagesReducer = (state = initialStateImg, { type, payload }) => {
+  switch (type) {
+    case ActionTypes.SET_IMAGE:
+      return { ...state, images: payload };
+    default:
+      return state;
+  }
+};
+/////////////////////////////////////
+
 const intialState = {
   products: [],
 };
@@ -6,8 +34,7 @@ const intialState = {
 export const productsReducer = (state = intialState, { type, payload }) => {
   switch (type) {
     case ActionTypes.SET_PRODUCTS:
-      // return { ...state, products: payload };
-      return { ...state, ...payload };
+      return { ...state, products: payload };
     default:
       return state;
   }
