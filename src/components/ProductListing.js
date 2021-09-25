@@ -31,7 +31,7 @@ const ProductPage = () => {
     // // body: formdata,
     // redirect: "follow",
   };
-
+  const arr = [];
   const fetchGallery = async () => {
     const result = await fetch(
       "https://api.imgur.com/3/gallery/hot/viral/day/2?showViral=true&mature=false&album_previews=false",
@@ -44,7 +44,8 @@ const ProductPage = () => {
     // console.log(post);
     const img = await post.map((i) => {
       const { images } = i;
-      return images;
+      const im = arr.concat(images);
+      return im;
     });
     dispatch(setImages(img));
     console.log(img);
