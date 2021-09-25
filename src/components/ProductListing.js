@@ -44,8 +44,9 @@ const ProductPage = () => {
         const data = result.data;
         data.map((image) => {
           const { images } = image;
-          console.log(images);
-          return dispatch(setImages(images));
+          dispatch(setImages(images));
+
+          return console.log(images);
         });
       })
       .catch((error) => console.log("error", error));
