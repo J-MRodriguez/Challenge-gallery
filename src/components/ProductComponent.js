@@ -8,6 +8,9 @@ const ProductComponent = () => {
   const images = useSelector((state) => state.images.images);
 
   console.log(images);
+  setTimeout(() => {
+    console.log(images);
+  }, 0.2);
   const renderList = images.map((obj) => {
     // const {  } = product;
 

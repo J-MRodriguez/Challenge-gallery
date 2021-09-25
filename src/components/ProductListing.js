@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect } from "react";
 // import axios from "axios";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 // import { useSelector } from "react-redux";
 import { setImages } from "../redux/actions/productsActions";
 import ProductComponent from "./ProductComponent";
@@ -10,7 +10,6 @@ import Menu from "./Menu";
 // import * as data from "./../Data/gallery.json";
 
 const ProductPage = () => {
-  const products = useSelector((state) => state.allProducts.products);
   const dispatch = useDispatch();
 
   // const myHeaders = new Headers();
@@ -78,7 +77,6 @@ const ProductPage = () => {
   //   fetchProducts();
   // }, []);
 
-  console.log("Products :", products);
   return (
     <div className="ui grid container">
       <Menu />
