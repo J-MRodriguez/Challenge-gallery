@@ -7,6 +7,7 @@ const ProductComponent = () => {
   // const gallery = useSelector((state) => state.allProducts.products);
   const images = useSelector((state) => state.images.images);
 
+  console.log(images);
   const renderList = images.map((obj) => {
     // const {  } = product;
 
