@@ -10,7 +10,7 @@ const ProductComponent = () => {
   console.log(images);
   setTimeout(() => {
     console.log(images);
-  }, 0.2);
+  }, 1000);
   const renderList = images.map((obj) => {
     // const {  } = product;
 
