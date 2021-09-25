@@ -20,7 +20,7 @@ export const galleryReducer = (state = initialStateGall, { type, payload }) => {
 export const imagesReducer = (state = initialStateImg, { type, payload }) => {
   switch (type) {
     case ActionTypes.SET_IMAGE:
-      return { ...state, images: payload };
+      return { ...state, ...payload };
     default:
       return state;
   }
