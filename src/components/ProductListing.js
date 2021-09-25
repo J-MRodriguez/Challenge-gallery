@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 // import axios from "axios";
 import { useDispatch } from "react-redux";
 // import { useSelector } from "react-redux";
-import { setProducts } from "../redux/actions/productsActions";
+import { setImages, setProducts } from "../redux/actions/productsActions";
 import ProductComponent from "./ProductComponent";
 import Menu from "./Menu";
 
@@ -31,7 +31,7 @@ const ProductPage = () => {
     // // body: formdata,
     // redirect: "follow",
   };
-
+  const im = [];
   const fetchGallery = async () => {
     const result = await fetch(
       "https://api.imgur.com/3/gallery/hot/viral/day/2?showViral=true&mature=false&album_previews=false",
@@ -41,12 +41,14 @@ const ProductPage = () => {
       .catch((error) => console.log("error", error));
     const post = result.data;
     dispatch(setProducts(post));
-    // .then((response) => response.json())
-    // .then((result) => dispatch(setProducts(result.data)))
-
-    // console.log(data.data);
-    // dispatch(setProducts(data.data));
-    console.log(post);
+    // console.log(post);
+    const img = await post.map((i) => {
+      const { images } = i;
+      const arr = [...im, ...images];
+      return arr;
+    });
+    dispatch(setImages(img));
+    console.log(img);
   };
 
   useEffect(() => {
