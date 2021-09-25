@@ -39,13 +39,13 @@ const ProductPage = () => {
     )
       .then((response) => response.json())
       .catch((error) => console.log("error", error));
-    const post = result.data;
+    const post = await result.data;
     dispatch(setProducts(post));
     // console.log(post);
     const img = await post.map((i) => {
       const { images } = i;
       const arr = [...im, ...images];
-      return arr;
+      throw arr;
     });
     dispatch(setImages(img));
     console.log(img);
