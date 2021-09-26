@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { IoArrowBackCircleOutline } from "react-icons";
+import { IoMdArrowBack } from "react-icons/io";
 
 const Header = () => {
   return (
@@ -8,8 +8,7 @@ const Header = () => {
       <div className="ui container center">
         <Link to="/">
           <h2 style={{ cursor: "pointer", color: "black" }}>
-            {" "}
-            <IoArrowBackCircleOutline />
+            <IoMdArrowBack />
           </h2>
         </Link>
       </div>
