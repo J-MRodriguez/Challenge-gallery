@@ -11,7 +11,6 @@ const ProductComponent = () => {
   console.log(gallery);
 
   const renderList = gallery.map((product) => {
-    const test = product[0];
     const id = test.id;
     const link = test.link;
     const description = test.description;

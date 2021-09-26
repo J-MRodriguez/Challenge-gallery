@@ -47,9 +47,14 @@ const ProductPage = () => {
       const arr = [].concat(images);
       return arr;
     });
-    dispatch(setProducts(img));
+    const im = await img.map((i) => {
+      const test = i[0];
+      const arr = [].concat(test);
+      return arr;
+    });
+    dispatch(setProducts(im));
     // dispatch(setImages(img));
-    console.log(img);
+    console.log(im);
   };
 
   useEffect(() => {
