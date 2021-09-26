@@ -10,24 +10,6 @@ const ProductComponent = () => {
   const renderList = gallery.map((product) => {
     if (product === undefined || product.description === null) {
       return console.log("undefine");
-      // return (
-      //   <div className="four wide column">
-      //     <Link to={`/product/`}>
-      //       <div className="ui link cards">
-      //         <div className="card">
-      //           <div className="image">
-      //             <img
-      //               src="https://image.freepik.com/vector-gratis/pagina-error-404-distorsion_23-2148105404.jpg"
-      //               alt="imagen"
-      //             />
-      //           </div>
-      //           <div className="content">
-      //             <div className="header"></div>
-      //           </div>
-      //         </div>
-      //       </div>
-      //     </Link>
-      //   </div>
     } else {
       const { id, link, description, type } = product;
 

@@ -71,9 +71,9 @@ export const windowReducer = (state = "day", { type }) => {
 export const showViralReducer = (state = true, { type }) => {
   switch (type) {
     case ActionTypes.CHANGE_SHOWVIRALON:
-      return true;
+      return "true";
     case ActionTypes.CHANGE_SHOWVIRALOFF:
-      return false;
+      return "false";
     default:
       return state;
   }
