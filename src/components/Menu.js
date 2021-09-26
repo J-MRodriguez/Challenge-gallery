@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
+import { useDispatch } from "react-redux";
 import {
   changeSection,
   changeSort,
@@ -8,6 +9,7 @@ import {
 import "./Menu.css";
 
 const Menu = () => {
+  const dispatch = useDispatch();
   return (
     <nav className="ui fixed menu pro">
       <ul className="menu cf">
@@ -19,21 +21,21 @@ const Menu = () => {
           <ul className="submenu">
             <li
               onClick={() => {
-                changeSection("hot");
+                dispatch(changeSection("hot"));
               }}
             >
               <a>Hot</a>
             </li>
             <li
               onClick={() => {
-                changeSection("top");
+                dispatch(changeSection("top"));
               }}
             >
               <a>Top</a>
             </li>
             <li
               onClick={() => {
-                changeSection("user");
+                dispatch(changeSection("user"));
               }}
             >
               <a>User</a>
@@ -45,21 +47,21 @@ const Menu = () => {
           <ul className="submenu">
             <li
               onClick={() => {
-                changeSort("hot");
+                dispatch(changeSort("viral"));
               }}
             >
               <a>Viral</a>
             </li>
             <li
               onClick={() => {
-                changeSort("top");
+                dispatch(changeSort("top"));
               }}
             >
               <a>Top</a>
             </li>
             <li
               onClick={() => {
-                changeSort("time");
+                dispatch(changeSort("ime"));
               }}
             >
               <a>Time</a>
@@ -71,35 +73,35 @@ const Menu = () => {
           <ul className="submenu">
             <li
               onClick={() => {
-                changeWindow("day");
+                dispatch(changeWindow("day"));
               }}
             >
               <a>Day</a>
             </li>
             <li
               onClick={() => {
-                changeWindow("week");
+                dispatch(changeWindow("week"));
               }}
             >
               <a>Week</a>
             </li>
             <li
               onClick={() => {
-                changeWindow("month");
+                dispatch(changeWindow("month"));
               }}
             >
               <a>Month</a>
             </li>
             <li
               onClick={() => {
-                changeWindow("year");
+                dispatch(changeWindow("year"));
               }}
             >
               <a>Year</a>
             </li>
             <li
               onClick={() => {
-                changeWindow("all");
+                dispatch(changeWindow("all"));
               }}
             >
               <a>All</a>
