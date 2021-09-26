@@ -47,10 +47,10 @@ const ProductPage = () => {
       const im = [].concat(images);
       return im;
     });
-    const list = [];
-    await img.forEach((i) => {
-      list.concat(i);
-      return list;
+
+    const list = await img.forEach((i) => {
+      let arr = [].concat(i);
+      return arr;
     });
     dispatch(setImages(list));
     console.log(list);
