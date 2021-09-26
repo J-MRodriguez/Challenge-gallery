@@ -41,7 +41,7 @@ const ProductPage = () => {
       .catch((error) => console.log("error", error));
     const post = await result.data;
     // dispatch(setProducts(post));
-    // console.log(post);
+    console.log(post);
     const img = await post.map((i) => {
       const { images } = i;
       const arr = [].concat(images);
