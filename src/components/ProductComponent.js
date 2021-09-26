@@ -51,7 +51,7 @@ const ProductComponent = () => {
                 </div>
                 <div className="content">
                   {description === null ? (
-                    <div className="header">"Check this post"</div>
+                    <div className="header">Check this post</div>
                   ) : (
                     <div className="header">{description}</div>
                   )}
