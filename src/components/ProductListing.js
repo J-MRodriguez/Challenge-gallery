@@ -54,8 +54,7 @@ const ProductPage = () => {
     });
     const imagen = await im.map((e) => {
       const test = e[0];
-      const arr = [].concat(test);
-      return arr;
+      return test;
     });
     dispatch(setProducts(imagen));
     // dispatch(setImages(img));
