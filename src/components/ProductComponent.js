@@ -1,12 +1,9 @@
-/* eslint-disable no-unused-vars */
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { ConstructionOutlined } from "@mui/icons-material";
 
 const ProductComponent = () => {
   const gallery = useSelector((state) => state.allProducts.products);
-  const imagenes = useSelector((state) => state.images.images);
 
   console.log(gallery);
 
@@ -25,8 +22,6 @@ const ProductComponent = () => {
                 </div>
                 <div className="content">
                   <div className="header"></div>
-                  {/* <div className="meta price">$ {price}</div>
-                  <div className="meta">{category}</div> */}
                 </div>
               </div>
             </div>
@@ -35,7 +30,6 @@ const ProductComponent = () => {
       );
     } else {
       const { id, link, description, type } = product;
-      // console.log(id);
 
       return (
         <div className="four wide column" key={id}>
@@ -55,8 +49,6 @@ const ProductComponent = () => {
                   ) : (
                     <div className="header">{description}</div>
                   )}
-                  {/* <div className="meta price">$ {price}</div>
-                <div className="meta">{category}</div> */}
                 </div>
               </div>
             </div>
