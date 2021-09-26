@@ -8,7 +8,7 @@ const ProductComponent = () => {
   // console.log(gallery);
 
   const renderList = gallery.map((product) => {
-    if (product === undefined) {
+    if (product === undefined || product.description === null) {
       return console.log("undefine");
       // return (
       //   <div className="four wide column">
