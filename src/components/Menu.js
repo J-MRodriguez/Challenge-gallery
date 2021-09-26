@@ -18,13 +18,31 @@ const Menu = () => {
           <a>Section</a>
           <ul className="submenu">
             <li>
-              <a onClick={changeSection("hot")}>Hot</a>
+              <a
+                onClick={() => {
+                  changeSection("hot");
+                }}
+              >
+                Hot
+              </a>
             </li>
             <li>
-              <a onClick={changeSection("top")}>Top</a>
+              <a
+                onClick={() => {
+                  changeSection("top");
+                }}
+              >
+                Top
+              </a>
             </li>
             <li>
-              <a onClick={changeSection("user")}>User</a>
+              <a
+                onClick={() => {
+                  changeSection("user");
+                }}
+              >
+                User
+              </a>
             </li>
           </ul>
         </li>
@@ -32,13 +50,31 @@ const Menu = () => {
           <a>Sort</a>
           <ul className="submenu">
             <li>
-              <a onClick={changeSort("hot")}>Viral</a>
+              <a
+                onClick={() => {
+                  changeSort("hot");
+                }}
+              >
+                Viral
+              </a>
             </li>
             <li>
-              <a onClick={changeSort("top")}>Top</a>
+              <a
+                onClick={() => {
+                  changeSort("top");
+                }}
+              >
+                Top
+              </a>
             </li>
             <li>
-              <a onClick={changeSort("time")}>Time</a>
+              <a
+                onClick={() => {
+                  changeSort("time");
+                }}
+              >
+                Time
+              </a>
             </li>
           </ul>
         </li>
@@ -46,19 +82,49 @@ const Menu = () => {
           <a>Window</a>
           <ul className="submenu">
             <li>
-              <a onClick={changeWindow("day")}>Day</a>
+              <a
+                onClick={() => {
+                  changeWindow("day");
+                }}
+              >
+                Day
+              </a>
             </li>
             <li>
-              <a onClick={changeWindow("week")}>Week</a>
+              <a
+                onClick={() => {
+                  changeWindow("week");
+                }}
+              >
+                Week
+              </a>
             </li>
             <li>
-              <a onClick={changeWindow("month")}>Month</a>
+              <a
+                onClick={() => {
+                  changeWindow("month");
+                }}
+              >
+                Month
+              </a>
             </li>
             <li>
-              <a onClick={changeWindow("year")}>Year</a>
+              <a
+                onClick={() => {
+                  changeWindow("year");
+                }}
+              >
+                Year
+              </a>
             </li>
             <li>
-              <a onClick={changeWindow("all")}>All</a>
+              <a
+                onClick={() => {
+                  changeWindow("all");
+                }}
+              >
+                All
+              </a>
             </li>
           </ul>
         </li>
