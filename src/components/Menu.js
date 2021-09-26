@@ -22,14 +22,14 @@ const Menu = () => {
                 dispatch(changeViral(true));
               }}
             >
-              <a>Viral ON</a>
+              <a>ON</a>
             </li>
             <li
               onClick={() => {
                 dispatch(changeViral(false));
               }}
             >
-              <a>Viral OFF</a>
+              <a>OFF</a>
             </li>
           </ul>
         </li>
@@ -78,7 +78,7 @@ const Menu = () => {
             </li>
             <li
               onClick={() => {
-                dispatch(changeSort("ime"));
+                dispatch(changeSort("time"));
               }}
             >
               <a>Time</a>

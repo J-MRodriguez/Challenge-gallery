@@ -71,24 +71,6 @@ const ProductPage = () => {
     loadGallery();
   }, [section, sort, window, viral]);
 
-  // const fetchProducts = async () => {
-  //   // const response = await axios
-  //   //   .get(
-  //   //     "https://api.imgur.com/3/gallery/hot/viral/day/2?showViral=true&mature=false&album_previews=false",
-  //   //     requestOptions
-  //   //   )
-  //   //   .catch((err) => {
-  //   //     console.log("Err: ", err);
-  //   //   });
-  //   // console.log(response.data());
-  //   dispatch(setProducts(data.data));
-  //   // dispatch(setProducts(response));
-  // };
-
-  // useEffect(() => {
-  //   fetchProducts();
-  // }, []);
-
   return (
     <div className="ui grid container">
       <Menu />
