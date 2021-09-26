@@ -48,9 +48,8 @@ const ProductPage = () => {
       return im;
     });
 
-    const list = await img.forEach((i) => {
-      let arr = [].push(i);
-      return arr;
+    const list = await img.map((i) => {
+      return [].push(i);
     });
     dispatch(setImages(list));
     console.log(list);
