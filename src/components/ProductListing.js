@@ -44,16 +44,20 @@ const ProductPage = () => {
     // console.log(post);
     const img = await post.map((i) => {
       const { images } = i;
-
-      return [].concat(images);
+      const arr = [].concat(images);
+      return arr;
     });
 
-    dispatch(setImages(img));
-    // console.log(img);
+    // dispatch(setImages(img));
+    console.log(img);
   };
 
   useEffect(() => {
-    fetchGallery();
+    const loadGallery = async () => {
+      const response = fetchGallery();
+      dispatch(setImages(response));
+    };
+    loadGallery();
   }, []);
 
   // const fetchProducts = async () => {
