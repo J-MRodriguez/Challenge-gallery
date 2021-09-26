@@ -52,6 +52,10 @@ const ProductDetails = () => {
     };
   }, [productId]);
 
+  let upvotes = Math.random() * (1000 - 50) + 50;
+  let downvotes = Math.random() * (300 - 10) + 10;
+  let score = Math.random() * (6000 - 100) + 100;
+
   return (
     <div className="ui grid container">
       {Object.keys(product).length === 0 ? (
@@ -79,12 +83,14 @@ const ProductDetails = () => {
                 <h2>{/* <a className="ui teal tag label">${price}</a> */}</h2>
                 <h3 className="ui brown block header">{description}</h3>
                 {/* <p>"description"</p> */}
-                {/* <div className="ui vertical animated button" tabIndex="0"> */}
-                {/* <div className="hidden content">
-                    <i className="shop icon"></i>
+                <div className="ui vertical animated button" tabIndex="0">
+                  <div className="hidden content">
+                    {/* <p className="shop icon"></p> */}
                   </div>
-                  <div className="visible content">Add to Cart</div> */}
-                {/* </div> */}
+                  <div className="visible content">Up Votes: {upvotes}</div>
+                  <div className="visible content">Down Votes: {downvotes}</div>
+                  <div className="visible content">Score: {score}</div>
+                </div>
               </div>
             </div>
           </div>
