@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 // import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  setGallery,
+  // setGallery,
   setImages,
   setProducts,
 } from "../redux/actions/productsActions";
@@ -42,7 +42,7 @@ const ProductPage = () => {
       .then((response) => response.json())
       .catch((error) => console.log("error", error));
     const post = await result.data;
-    dispatch(setGallery(post));
+    // dispatch(setGallery(post));
     // console.log(post);
     const img = await post.map((i) => {
       const { images } = i;

@@ -41,7 +41,7 @@ const ProductDetails = () => {
         console.log("Err: ", err);
       });
     const data = await response.data;
-    console.log(data);
+    // console.log(data);
     dispatch(selectedProduct(data));
   };
 
