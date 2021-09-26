@@ -44,7 +44,7 @@ const ProductPage = () => {
     // console.log(post);
     const img = await post.map((i) => {
       const { images } = i;
-      const im = [].concat(images);
+      const im = [].push(images);
       return im;
     });
 
