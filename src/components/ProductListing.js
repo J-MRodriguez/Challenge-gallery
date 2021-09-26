@@ -45,11 +45,11 @@ const ProductPage = () => {
     const img = await post.map((i) => {
       const { images } = i;
 
-      return [].concat(images[0]);
+      return [].concat(images);
     });
 
     dispatch(setImages(img));
-    console.log(img);
+    // console.log(img);
   };
 
   useEffect(() => {
