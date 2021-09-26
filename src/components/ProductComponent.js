@@ -10,9 +10,9 @@ const ProductComponent = () => {
   console.log(gallery);
 
   const renderList = gallery.map((product) => {
-    const id = product[0].id;
-    const link = product[0].link;
-    const description = product[0].description;
+    const id = product.id;
+    const link = product.link;
+    const description = product.description;
 
     return (
       <div className="four wide column" key={id}>
