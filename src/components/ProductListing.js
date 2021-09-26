@@ -36,7 +36,7 @@ const ProductPage = () => {
 
   const fetchGallery = async () => {
     const result = await fetch(
-      `https://api.imgur.com/3/gallery/${section}/${sort}/${window}/2?showViral=${viral}&mature=false&album_previews=false`,
+      `https://api.imgur.com/2/gallery/${section}/${sort}/${window}/2?showViral=${viral}&mature=false&album_previews=false`,
       requestOptions
     )
       .then((response) => response.json())
