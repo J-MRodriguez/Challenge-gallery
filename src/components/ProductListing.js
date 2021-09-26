@@ -17,7 +17,7 @@ const ProductPage = () => {
   const section = useSelector((state) => state.section);
   const sort = useSelector((state) => state.sort);
   const window = useSelector((state) => state.window);
-  const viral = useSelector((state) => state.viral.bool);
+  const viral = useSelector((state) => state.viral);
 
   const requestOptions = {
     method: "GET",
