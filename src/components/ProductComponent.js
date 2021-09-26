@@ -7,7 +7,10 @@ const ProductComponent = () => {
   // const gallery = useSelector((state) => state.allProducts.products);
   const imagenes = useSelector((state) => state.images.images);
 
-  console.log(imagenes);
+  setTimeout(() => {
+    console.log(imagenes);
+  }, 1000);
+
   const renderList = imagenes.map((product) => {
     const { id, link, title } = product;
 
