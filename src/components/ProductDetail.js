@@ -58,7 +58,7 @@ const ProductDetails = () => {
   }, [productId]);
 
   let upvotes = Math.floor(Math.random() * (1000 - 50)) + 50;
-  let downvotes = Math.floor(Math.random() * (300 - 10)) + 10;
+  let downvotes = Math.floor(Math.random() * (100 - 10)) + 10;
   let score = Math.floor(Math.random() * (6000 - 100)) + 100;
 
   return (
