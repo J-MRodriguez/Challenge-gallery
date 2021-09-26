@@ -9,8 +9,8 @@ const ProductComponent = () => {
 
   console.log(gallery);
 
-  const renderList = imagenes.map((product) => {
-    const { id, link, title } = product;
+  const renderList = gallery.map((product) => {
+    const { id, link, description } = product[0];
 
     return (
       <div className="four wide column" key={id}>
@@ -18,10 +18,10 @@ const ProductComponent = () => {
           <div className="ui link cards">
             <div className="card">
               <div className="image">
-                <img src={link} alt={title} />
+                <img src={link} alt={description} />
               </div>
               <div className="content">
-                <div className="header">{title}</div>
+                <div className="header">{description}</div>
                 {/* <div className="meta price">$ {price}</div>
                 <div className="meta">{category}</div> */}
               </div>
