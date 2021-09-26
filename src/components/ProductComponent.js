@@ -9,8 +9,8 @@ const ProductComponent = () => {
 
   console.log(gallery);
 
-  const renderList = gallery.map((product) => {
-    const { id, link, description } = product[0];
+  const renderList = gallery.map((product, i) => {
+    const { id, link, description } = product[i][0];
 
     return (
       <div className="four wide column" key={id}>
