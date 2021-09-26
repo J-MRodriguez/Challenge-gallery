@@ -48,11 +48,8 @@ const ProductPage = () => {
       return im;
     });
 
-    const list = await img.map((i) => {
-      return i.concat(i);
-    });
-    dispatch(setImages(list));
-    console.log(list);
+    dispatch(setImages(img));
+    console.log(img);
   };
 
   useEffect(() => {
