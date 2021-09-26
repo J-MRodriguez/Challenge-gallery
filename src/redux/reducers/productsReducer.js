@@ -29,7 +29,7 @@ export const imagesReducer = (state = initialStateImg, { type, payload }) => {
 export const sectionReducer = (state = "hot", { type }) => {
   switch (type) {
     case ActionTypes.CHANGE_HOT:
-      return state;
+      return "hot";
     case ActionTypes.CHANGE_TOP:
       return "top";
     case ActionTypes.CHANGE_USER:
@@ -41,7 +41,7 @@ export const sectionReducer = (state = "hot", { type }) => {
 export const sortReducer = (state = "viral", { type }) => {
   switch (type) {
     case ActionTypes.CHANGE_VIRAL:
-      return state;
+      return "viral";
     case ActionTypes.CHANGE_TOP:
       return "top";
     case ActionTypes.CHANGE_TIME:
@@ -54,7 +54,7 @@ export const sortReducer = (state = "viral", { type }) => {
 export const windowReducer = (state = "day", { type }) => {
   switch (type) {
     case ActionTypes.CHANGE_DAY:
-      return state;
+      return "day";
     case ActionTypes.CHANGE_WEEK:
       return "week";
     case ActionTypes.CHANGE_MONTH:
@@ -68,11 +68,11 @@ export const windowReducer = (state = "day", { type }) => {
   }
 };
 
-export const showViralReducer = (state = true, { type, payload }) => {
+export const showViralReducer = (state = true, { type }) => {
   switch (type) {
-    case ActionTypes.CHANGE_SHOWVIRAL && payload === true:
-      return state;
-    case ActionTypes.CHANGE_SHOWVIRAL && payload === false:
+    case ActionTypes.CHANGE_SHOWVIRALON:
+      return true;
+    case ActionTypes.CHANGE_SHOWVIRALOFF:
       return false;
     default:
       return state;

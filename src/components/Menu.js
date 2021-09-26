@@ -19,14 +19,14 @@ const Menu = () => {
           <ul className="submenu">
             <li
               onClick={() => {
-                dispatch(changeViral(true));
+                dispatch(changeViral("on"));
               }}
             >
               <a>ON</a>
             </li>
             <li
               onClick={() => {
-                dispatch(changeViral(false));
+                dispatch(changeViral("off"));
               }}
             >
               <a>OFF</a>

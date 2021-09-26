@@ -15,11 +15,15 @@ export const setImages = (images) => {
 };
 
 ///////////////////////////////////
-export const changeViral = (bool) => {
-  return {
-    type: ActionTypes.CHANGE_SHOWVIRAL,
-    payload: bool,
-  };
+export const changeViral = (viral) => {
+  switch (viral) {
+    case "on":
+      return { type: ActionTypes.CHANGE_SHOWVIRALON };
+    case "off":
+      return { type: ActionTypes.CHANGE_SHOWVIRALOFF };
+    default:
+      break;
+  }
 };
 
 export const changeSection = (section) => {
