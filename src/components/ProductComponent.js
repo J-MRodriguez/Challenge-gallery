@@ -14,7 +14,8 @@ const ProductComponent = () => {
     const id = product.id;
     const link = product.link;
     const description = product.description;
-    console.log(link);
+    const test = product[0];
+    console.log(test);
 
     return (
       <div className="four wide column" key={id}>
