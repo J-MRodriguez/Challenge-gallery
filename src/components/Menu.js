@@ -15,113 +15,113 @@ const Menu = () => {
     <nav className="ui fixed menu pro">
       <ul className="menu cf">
         <li>
-          <a>Viral</a>
+          <p>Viral</p>
           <ul className="submenu">
             <li
               onClick={() => {
                 dispatch(changeViral(true));
               }}
             >
-              <a>ON</a>
+              <p>ON</p>
             </li>
             <li
               onClick={() => {
                 dispatch(changeViral(false));
               }}
             >
-              <a>OFF</a>
+              <p>OFF</p>
             </li>
           </ul>
         </li>
         <li>
-          <a>Section</a>
+          <p>Section</p>
           <ul className="submenu">
             <li
               onClick={() => {
                 dispatch(changeSection("hot"));
               }}
             >
-              <a>Hot</a>
+              <p>Hot</p>
             </li>
             <li
               onClick={() => {
                 dispatch(changeSection("top"));
               }}
             >
-              <a>Top</a>
+              <p>Top</p>
             </li>
             <li
               onClick={() => {
                 dispatch(changeSection("user"));
               }}
             >
-              <a>User</a>
+              <p>User</p>
             </li>
           </ul>
         </li>
         <li>
-          <a>Sort</a>
+          <p>Sort</p>
           <ul className="submenu">
             <li
               onClick={() => {
                 dispatch(changeSort("viral"));
               }}
             >
-              <a>Viral</a>
+              <p>Viral</p>
             </li>
             <li
               onClick={() => {
                 dispatch(changeSort("top"));
               }}
             >
-              <a>Top</a>
+              <p>Top</p>
             </li>
             <li
               onClick={() => {
                 dispatch(changeSort("time"));
               }}
             >
-              <a>Time</a>
+              <p>Time</p>
             </li>
           </ul>
         </li>
         <li>
-          <a>Window</a>
+          <p>Window</p>
           <ul className="submenu">
             <li
               onClick={() => {
                 dispatch(changeWindow("day"));
               }}
             >
-              <a>Day</a>
+              <p>Day</p>
             </li>
             <li
               onClick={() => {
                 dispatch(changeWindow("week"));
               }}
             >
-              <a>Week</a>
+              <p>Week</p>
             </li>
             <li
               onClick={() => {
                 dispatch(changeWindow("month"));
               }}
             >
-              <a>Month</a>
+              <p>Month</p>
             </li>
             <li
               onClick={() => {
                 dispatch(changeWindow("year"));
               }}
             >
-              <a>Year</a>
+              <p>Year</p>
             </li>
             <li
               onClick={() => {
                 dispatch(changeWindow("all"));
               }}
             >
-              <a>All</a>
+              <p>All</p>
             </li>
           </ul>
         </li>

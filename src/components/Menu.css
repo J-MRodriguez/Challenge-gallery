@@ -39,7 +39,7 @@
   cursor: pointer;
 }
 
-.menu a {
+.menu p {
   display: block;
   color: #fff;
   text-transform: uppercase;
@@ -52,7 +52,7 @@
   background: #e74c3c;
 }
 
-.menu > li > a {
+.menu > li > p {
   transform: skewX(-25deg);
   padding: 1em 2em;
 }
@@ -73,7 +73,7 @@
   overflow: hidden;
 }
 
-.submenu > li > a {
+.submenu > li > p {
   padding: 1em 2em;
 }
 
