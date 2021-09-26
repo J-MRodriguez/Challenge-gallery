@@ -44,14 +44,7 @@ const ProductComponent = () => {
               <div className="card">
                 <div className="image">
                   {type === "video/mp4" ? (
-                    <video
-                      src={link}
-                      autoPlay
-                      muted
-                      loop
-                      width="640"
-                      height="480"
-                    />
+                    <video src={link} autoPlay muted loop />
                   ) : (
                     <img src={link} alt={description} />
                   )}
