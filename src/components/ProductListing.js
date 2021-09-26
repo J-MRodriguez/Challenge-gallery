@@ -48,7 +48,7 @@ const ProductPage = () => {
       return im;
     });
     const list = await img.forEach((ima, i) => {
-      const imag = [].concat(ima[i][0]);
+      const imag = [].concat(ima[i]);
       return imag;
     });
 
