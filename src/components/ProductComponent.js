@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { ConstructionOutlined } from "@mui/icons-material";
 
 const ProductComponent = () => {
   const gallery = useSelector((state) => state.allProducts.products);
@@ -13,6 +14,7 @@ const ProductComponent = () => {
     const id = product.id;
     const link = product.link;
     const description = product.description;
+    console.log(link);
 
     return (
       <div className="four wide column" key={id}>
