@@ -79,12 +79,12 @@ const ProductDetails = () => {
                 <h2>{/* <a className="ui teal tag label">${price}</a> */}</h2>
                 <h3 className="ui brown block header">{description}</h3>
                 {/* <p>"description"</p> */}
-                <div className="ui vertical animated button" tabIndex="0">
-                  {/* <div className="hidden content">
+                {/* <div className="ui vertical animated button" tabIndex="0"> */}
+                {/* <div className="hidden content">
                     <i className="shop icon"></i>
                   </div>
                   <div className="visible content">Add to Cart</div> */}
-                </div>
+                {/* </div> */}
               </div>
             </div>
           </div>
