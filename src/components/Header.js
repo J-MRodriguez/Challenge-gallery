@@ -6,7 +6,7 @@ const Header = () => {
     <div className="ui fixed menu">
       <div className="ui container center">
         <Link to="/">
-          <h2 style={{ cursor: "pointer" }}>Challenge</h2>
+          <h2 style={{ cursor: "pointer", color: "black" }}>Challenge</h2>
         </Link>
       </div>
     </div>

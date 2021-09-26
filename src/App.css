@@ -96,6 +96,10 @@ body {
   font-size: 18px;
   color: #777;
 }
+.ui.placeholder.segment {
+  margin-top: 200px;
+}
+
 .ui.placeholder.segment .column .button,
 .ui.placeholder.segment .column .field,
 .ui.placeholder.segment .column textarea,
