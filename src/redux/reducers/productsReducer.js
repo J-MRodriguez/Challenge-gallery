@@ -70,9 +70,9 @@ export const windowReducer = (state = "day", { type }) => {
 
 export const showViralReducer = (state = true, { type, payload }) => {
   switch (type) {
-    case ActionTypes.CHANGE_SHOWVIRAL && payload === false:
-      return state;
     case ActionTypes.CHANGE_SHOWVIRAL && payload === true:
+      return state;
+    case ActionTypes.CHANGE_SHOWVIRAL && payload === false:
       return false;
     default:
       return state;

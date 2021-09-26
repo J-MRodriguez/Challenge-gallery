@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import {
   changeSection,
   changeSort,
+  changeViral,
   changeWindow,
 } from "../redux/actions/productsActions";
 import "./Menu.css";
@@ -15,6 +16,22 @@ const Menu = () => {
       <ul className="menu cf">
         <li>
           <a>Viral</a>
+          <ul className="submenu">
+            <li
+              onClick={() => {
+                dispatch(changeViral(true));
+              }}
+            >
+              <a>Viral ON</a>
+            </li>
+            <li
+              onClick={() => {
+                dispatch(changeViral(false));
+              }}
+            >
+              <a>Viral OFF</a>
+            </li>
+          </ul>
         </li>
         <li>
           <a>Section</a>
