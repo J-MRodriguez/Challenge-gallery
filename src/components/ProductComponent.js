@@ -11,27 +11,51 @@ const ProductComponent = () => {
   console.log(gallery);
 
   const renderList = gallery.map((product) => {
-    const { id, link, description } = product;
-    console.log(id);
-
-    return (
-      <div className="four wide column" key={id}>
-        <Link to={`/product/${id}`}>
-          <div className="ui link cards">
-            <div className="card">
-              <div className="image">
-                <img src={link} alt={description} />
-              </div>
-              <div className="content">
-                <div className="header">{description}</div>
-                {/* <div className="meta price">$ {price}</div>
-                <div className="meta">{category}</div> */}
+    if (product === undefined) {
+      return (
+        <div className="four wide column">
+          <Link to={`/product/`}>
+            <div className="ui link cards">
+              <div className="card">
+                <div className="image">
+                  <img
+                    src="https://image.freepik.com/vector-gratis/pagina-error-404-distorsion_23-2148105404.jpg"
+                    alt="imagen"
+                  />
+                </div>
+                <div className="content">
+                  <div className="header"></div>
+                  {/* <div className="meta price">$ {price}</div>
+                  <div className="meta">{category}</div> */}
+                </div>
               </div>
             </div>
-          </div>
-        </Link>
-      </div>
-    );
+          </Link>
+        </div>
+      );
+    } else {
+      const { id, link, description } = product;
+      console.log(id);
+
+      return (
+        <div className="four wide column" key={id}>
+          <Link to={`/product/${id}`}>
+            <div className="ui link cards">
+              <div className="card">
+                <div className="image">
+                  <img src={link} alt={description} />
+                </div>
+                <div className="content">
+                  <div className="header">{description}</div>
+                  {/* <div className="meta price">$ {price}</div>
+                <div className="meta">{category}</div> */}
+                </div>
+              </div>
+            </div>
+          </Link>
+        </div>
+      );
+    }
   });
 
   return <>{renderList}</>;
