@@ -8,7 +8,7 @@ const ProductComponent = () => {
   const imagenes = useSelector((state) => state.images.images);
 
   const renderList = imagenes.map((product, i) => {
-    const { id, link, title } = product[i];
+    const { id, link, title } = product[i][0];
 
     return (
       <div className="four wide column" key={id}>
