@@ -1,6 +1,11 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useEffect } from "react";
+import {
+  FaRegHandPointUp,
+  FaRegHandPointDown,
+  FaRegFlag,
+} from "react-icons/fa";
 // import axios from "axios";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -52,9 +57,9 @@ const ProductDetails = () => {
     };
   }, [productId]);
 
-  let upvotes = Math.random() * (1000 - 50) + 50;
-  let downvotes = Math.random() * (300 - 10) + 10;
-  let score = Math.random() * (6000 - 100) + 100;
+  let upvotes = Math.floor(Math.random() * (1000 - 50)) + 50;
+  let downvotes = Math.floor(Math.random() * (300 - 10)) + 10;
+  let score = Math.floor(Math.random() * (6000 - 100)) + 100;
 
   return (
     <div className="ui grid container">
@@ -85,10 +90,20 @@ const ProductDetails = () => {
                 {/* <p>"description"</p> */}
                 <div className="ui vertical animated button" tabIndex="0">
                   <div className="hidden content">
-                    {/* <p className="shop icon"></p> */}
+                    <FaRegHandPointUp />
                   </div>
                   <div className="visible content">Up Votes: {upvotes}</div>
+                </div>
+                <div className="ui vertical animated button" tabIndex="0">
+                  <div className="hidden content">
+                    <FaRegHandPointDown />
+                  </div>
                   <div className="visible content">Down Votes: {downvotes}</div>
+                </div>
+                <div className="ui vertical animated button" tabIndex="0">
+                  <div className="hidden content">
+                    <FaRegFlag />
+                  </div>
                   <div className="visible content">Score: {score}</div>
                 </div>
               </div>
