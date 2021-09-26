@@ -11,9 +11,7 @@ const ProductComponent = () => {
   console.log(gallery);
 
   const renderList = gallery.map((product) => {
-    const id = product.id;
-    const link = product.link;
-    const description = product.description;
+    const { id, link, description } = product;
     console.log(id);
 
     return (
