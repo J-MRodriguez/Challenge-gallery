@@ -34,8 +34,8 @@ const ProductComponent = () => {
         </div>
       );
     } else {
-      const { id, link, description } = product;
-      console.log(id);
+      const { id, link, description, type } = product;
+      // console.log(id);
 
       return (
         <div className="four wide column" key={id}>
@@ -43,7 +43,11 @@ const ProductComponent = () => {
             <div className="ui link cards">
               <div className="card">
                 <div className="image">
-                  <img src={link} alt={description} />
+                  {type === "video/mp4" ? (
+                    <video src={link} autoPlay muted loop />
+                  ) : (
+                    <img src={link} alt={description} />
+                  )}
                 </div>
                 <div className="content">
                   <div className="header">{description}</div>
