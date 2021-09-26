@@ -2,7 +2,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 // import axios from "axios";
-// import { useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 // import { useDispatch, useSelector } from "react-redux";
 // import {
 //   selectedProduct,
@@ -11,7 +11,7 @@ import React from "react";
 // import * as data from "./../Data/gallery.json";
 
 const ProductDetails = () => {
-  // const { productId } = useParams();
+  const { productId } = useParams();
   // let product = useSelector((state) => state.product);
 
   // const { link, title, category, description } = product;
@@ -68,7 +68,7 @@ const ProductDetails = () => {
               />
             </div>
             <div className="column rp">
-              <h1>"titulo"</h1>
+              <h1>{productId.id}</h1>
               <h2>{/* <a className="ui teal tag label">${price}</a> */}</h2>
               <h3 className="ui brown block header">"header"</h3>
               <p>"description"</p>
