@@ -13,7 +13,7 @@ const ProductDetails = () => {
   const { productId } = useParams();
   let product = useSelector((state) => state.product);
 
-  const { description, link } = product;
+  const { description, link, type } = product;
   const dispatch = useDispatch();
 
   const requestOptions = {
@@ -62,7 +62,18 @@ const ProductDetails = () => {
             <div className="ui vertical divider"></div>
             <div className="middle aligned row">
               <div className="column lp">
-                <img className="ui fluid image" src={link} alt="imagen" />
+                {<img className="ui fluid image" src={link} alt="imagen" />}
+                {type === "video/mp4" ? (
+                  <video
+                    className="ui fluid image"
+                    src={link}
+                    autoPlay
+                    muted
+                    loop
+                  />
+                ) : (
+                  <img className="ui fluid image" src={link} alt="imagen" />
+                )}
               </div>
               <div className="column rp">
                 <h1>{description}</h1>
