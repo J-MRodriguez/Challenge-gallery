@@ -47,9 +47,13 @@ const ProductPage = () => {
       const im = [].concat(images);
       return im;
     });
+    const list = await img.forEach((ima, i) => {
+      const imag = [].concat(ima[i][0]);
+      return imag;
+    });
 
-    dispatch(setImages(img));
-    console.log(img);
+    dispatch(setImages(list));
+    console.log(list);
   };
 
   useEffect(() => {
