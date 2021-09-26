@@ -49,7 +49,7 @@ const ProductPage = () => {
     });
 
     const list = await img.forEach((i) => {
-      let arr = [].concat(i);
+      let arr = [].push(i);
       return arr;
     });
     dispatch(setImages(list));
