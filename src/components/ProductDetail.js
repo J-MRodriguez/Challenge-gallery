@@ -89,22 +89,22 @@ const ProductDetails = () => {
                 <h3 className="ui brown block header">{description}</h3>
                 {/* <p>"description"</p> */}
                 <div className="ui vertical animated button" tabIndex="0">
-                  <div className="hidden content">
+                  <div className="hidden content">Up Votes: {upvotes}</div>
+                  <div className="visible content">
                     <FaRegHandPointUp />
                   </div>
-                  <div className="visible content">Up Votes: {upvotes}</div>
                 </div>
                 <div className="ui vertical animated button" tabIndex="0">
-                  <div className="hidden content">
+                  <div className="hidden content">Down Votes: {downvotes}</div>
+                  <div className="visible content">
                     <FaRegHandPointDown />
                   </div>
-                  <div className="visible content">Down Votes: {downvotes}</div>
                 </div>
                 <div className="ui vertical animated button" tabIndex="0">
-                  <div className="hidden content">
+                  <div className="hidden content">Score: {score}</div>
+                  <div className="visible content">
                     <FaRegFlag />
                   </div>
-                  <div className="visible content">Score: {score}</div>
                 </div>
               </div>
             </div>
