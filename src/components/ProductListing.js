@@ -40,14 +40,14 @@ const ProductPage = () => {
       .then((response) => response.json())
       .catch((error) => console.log("error", error));
     const post = await result.data;
-    dispatch(setProducts(post));
+    // dispatch(setProducts(post));
     // console.log(post);
     const img = await post.map((i) => {
       const { images } = i;
       const arr = [].concat(images);
       return arr;
     });
-
+    dispatch(setProducts(img));
     // dispatch(setImages(img));
     console.log(img);
   };
