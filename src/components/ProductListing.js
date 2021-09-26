@@ -49,7 +49,7 @@ const ProductPage = () => {
     });
 
     const list = await img.map((i) => {
-      return [].concat(i);
+      return i.concat(i);
     });
     dispatch(setImages(list));
     console.log(list);
