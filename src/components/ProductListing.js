@@ -1,8 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect } from "react";
 // import axios from "axios";
-import { useDispatch } from "react-redux";
-// import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {
   setGallery,
   setImages,
@@ -15,11 +14,10 @@ import Menu from "./Menu";
 
 const ProductPage = () => {
   const dispatch = useDispatch();
-
-  // const myHeaders = new Headers();
-  // myHeaders.append("Authorization", "Client-ID c2c79f20f313af8");
-
-  // const formdata = new FormData();
+  const section = useSelector((state) => state.section);
+  const sort = useSelector((state) => state.sort);
+  const window = useSelector((state) => state.window);
+  const viral = useSelector((state) => state.viral.bool);
 
   const requestOptions = {
     method: "GET",
@@ -38,7 +36,7 @@ const ProductPage = () => {
 
   const fetchGallery = async () => {
     const result = await fetch(
-      "https://api.imgur.com/3/gallery/hot/viral/day/2?showViral=true&mature=false&album_previews=false",
+      `https://api.imgur.com/3/gallery/${section}/${sort}/${window}/2?showViral=${viral}&mature=false&album_previews=false`,
       requestOptions
     )
       .then((response) => response.json())

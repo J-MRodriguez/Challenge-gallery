@@ -1,5 +1,10 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
+import {
+  changeSection,
+  changeSort,
+  changeWindow,
+} from "../redux/actions/productsActions";
 import "./Menu.css";
 
 const Menu = () => {
@@ -7,56 +12,53 @@ const Menu = () => {
     <nav className="ui fixed menu pro">
       <ul className="menu cf">
         <li>
-          <a href="">Viral</a>
+          <a>Viral</a>
         </li>
         <li>
-          <a href="">Section</a>
+          <a>Section</a>
           <ul className="submenu">
             <li>
-              <a href="">Hot</a>
+              <a onClick={changeSection("hot")}>Hot</a>
             </li>
             <li>
-              <a href="">Top</a>
+              <a onClick={changeSection("top")}>Top</a>
             </li>
             <li>
-              <a href="">User</a>
+              <a onClick={changeSection("user")}>User</a>
             </li>
           </ul>
         </li>
         <li>
-          <a href="">Sort</a>
+          <a>Sort</a>
           <ul className="submenu">
             <li>
-              <a href="">Viral</a>
+              <a onClick={changeSort("hot")}>Viral</a>
             </li>
             <li>
-              <a href="">Top</a>
+              <a onClick={changeSort("top")}>Top</a>
             </li>
             <li>
-              <a href="">Time</a>
-            </li>
-            <li>
-              <a href="">Rising</a>
+              <a onClick={changeSort("time")}>Time</a>
             </li>
           </ul>
         </li>
         <li>
-          <a href="">Window</a>
+          <a>Window</a>
           <ul className="submenu">
             <li>
-              <a href="">Day</a>
+              <a onClick={changeWindow("day")}>Day</a>
             </li>
             <li>
-              <a href="">Week</a>
+              <a onClick={changeWindow("week")}>Week</a>
             </li>
             <li>
-              <a href="">Month</a>
+              <a onClick={changeWindow("month")}>Month</a>
             </li>
             <li>
-              <a href="">Year</a>
+              <a onClick={changeWindow("year")}>Year</a>
             </li>
             <li>
-              <a href="">All</a>
+              <a onClick={changeWindow("all")}>All</a>
             </li>
           </ul>
         </li>

@@ -25,6 +25,60 @@ export const imagesReducer = (state = initialStateImg, { type, payload }) => {
       return state;
   }
 };
+//////////////////////////////////////
+export const sectionReducer = (state = "hot", { type }) => {
+  switch (type) {
+    case ActionTypes.CHANGE_HOT:
+      return state;
+    case ActionTypes.CHANGE_TOP:
+      return "top";
+    case ActionTypes.CHANGE_USER:
+      return "user";
+    default:
+      return state;
+  }
+};
+export const sortReducer = (state = "viral", { type }) => {
+  switch (type) {
+    case ActionTypes.CHANGE_VIRAL:
+      return state;
+    case ActionTypes.CHANGE_TOP:
+      return "top";
+    case ActionTypes.CHANGE_TIME:
+      return "time";
+    default:
+      return state;
+  }
+};
+
+export const windowReducer = (state = "day", { type }) => {
+  switch (type) {
+    case ActionTypes.CHANGE_DAY:
+      return state;
+    case ActionTypes.CHANGE_WEEK:
+      return "week";
+    case ActionTypes.CHANGE_MONTH:
+      return "month";
+    case ActionTypes.CHANGE_YEAR:
+      return "year";
+    case ActionTypes.CHANGE_ALL:
+      return "all";
+    default:
+      return state;
+  }
+};
+
+export const showViralReducer = (state = true, { type, payload }) => {
+  switch (type) {
+    case ActionTypes.CHANGE_SHOWVIRAL && payload === false:
+      return state;
+    case ActionTypes.CHANGE_SHOWVIRAL && payload === true:
+      return false;
+    default:
+      return state;
+  }
+};
+
 /////////////////////////////////////
 
 const intialState = {
