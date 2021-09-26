@@ -33,7 +33,7 @@ const ProductDetails = () => {
 
   const fetchProductDetail = async (id) => {
     const response = await fetch(
-      `https://api.imgur.com/3/image/${id}`,
+      `https://api.imgur.com/3/gallery/image/${id}`,
       requestOptions
     )
       .then((response) => response.json())
