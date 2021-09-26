@@ -54,7 +54,7 @@ const ProductPage = () => {
 
   useEffect(() => {
     const loadGallery = async () => {
-      const response = fetchGallery();
+      const response = await fetchGallery();
       dispatch(setImages(response));
     };
     loadGallery();
