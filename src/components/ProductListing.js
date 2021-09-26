@@ -69,7 +69,7 @@ const ProductPage = () => {
       dispatch(setImages(response));
     };
     loadGallery();
-  }, []);
+  }, [section, sort, window, viral]);
 
   // const fetchProducts = async () => {
   //   // const response = await axios
