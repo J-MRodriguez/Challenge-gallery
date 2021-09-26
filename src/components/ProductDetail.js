@@ -13,7 +13,7 @@ const ProductDetails = () => {
   const { productId } = useParams();
   let product = useSelector((state) => state.product);
 
-  const { description } = product;
+  const { description, link } = product;
   const dispatch = useDispatch();
 
   const requestOptions = {
@@ -59,11 +59,7 @@ const ProductDetails = () => {
             <div className="ui vertical divider"></div>
             <div className="middle aligned row">
               <div className="column lp">
-                <img
-                  className="ui fluid image"
-                  src="https://www.cinco8.com/wp-content/uploads/2020/08/404.png"
-                  alt="imagen"
-                />
+                <img className="ui fluid image" src={link} alt="imagen" />
               </div>
               <div className="column rp">
                 <h1>{description}</h1>
