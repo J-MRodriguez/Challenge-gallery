@@ -62,7 +62,6 @@ const ProductDetails = () => {
             <div className="ui vertical divider"></div>
             <div className="middle aligned row">
               <div className="column lp">
-                {<img className="ui fluid image" src={link} alt="imagen" />}
                 {type === "video/mp4" ? (
                   <video
                     className="ui fluid image"
@@ -78,13 +77,13 @@ const ProductDetails = () => {
               <div className="column rp">
                 <h1>{description}</h1>
                 <h2>{/* <a className="ui teal tag label">${price}</a> */}</h2>
-                <h3 className="ui brown block header">"header"</h3>
-                <p>"description"</p>
+                <h3 className="ui brown block header">{description}</h3>
+                {/* <p>"description"</p> */}
                 <div className="ui vertical animated button" tabIndex="0">
-                  <div className="hidden content">
+                  {/* <div className="hidden content">
                     <i className="shop icon"></i>
                   </div>
-                  <div className="visible content">Add to Cart</div>
+                  <div className="visible content">Add to Cart</div> */}
                 </div>
               </div>
             </div>
