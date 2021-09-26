@@ -50,7 +50,11 @@ const ProductComponent = () => {
                   )}
                 </div>
                 <div className="content">
-                  <div className="header">{description}</div>
+                  {description === null ? (
+                    <div className="header">"Check this post"</div>
+                  ) : (
+                    <div className="header">{description}</div>
+                  )}
                   {/* <div className="meta price">$ {price}</div>
                 <div className="meta">{category}</div> */}
                 </div>
