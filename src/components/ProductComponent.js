@@ -4,12 +4,10 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 const ProductComponent = () => {
-  // const gallery = useSelector((state) => state.allProducts.products);
+  const gallery = useSelector((state) => state.allProducts.products);
   const imagenes = useSelector((state) => state.images.images);
 
-  setTimeout(() => {
-    console.log(imagenes);
-  }, 1000);
+  console.log(gallery);
 
   const renderList = imagenes.map((product) => {
     const { id, link, title } = product;
