@@ -36,6 +36,7 @@
   float: left;
   position: relative;
   transform: skewX(25deg);
+  cursor: pointer;
 }
 
 .menu a {

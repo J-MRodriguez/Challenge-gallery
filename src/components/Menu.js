@@ -17,114 +17,92 @@ const Menu = () => {
         <li>
           <a>Section</a>
           <ul className="submenu">
-            <li>
-              <a
-                onClick={() => {
-                  changeSection("hot");
-                }}
-              >
-                Hot
-              </a>
+            <li
+              onClick={() => {
+                changeSection("hot");
+              }}
+            >
+              <a>Hot</a>
             </li>
-            <li>
-              <a
-                onClick={() => {
-                  changeSection("top");
-                }}
-              >
-                Top
-              </a>
+            <li
+              onClick={() => {
+                changeSection("top");
+              }}
+            >
+              <a>Top</a>
             </li>
-            <li>
-              <a
-                onClick={() => {
-                  changeSection("user");
-                }}
-              >
-                User
-              </a>
+            <li
+              onClick={() => {
+                changeSection("user");
+              }}
+            >
+              <a>User</a>
             </li>
           </ul>
         </li>
         <li>
           <a>Sort</a>
           <ul className="submenu">
-            <li>
-              <a
-                onClick={() => {
-                  changeSort("hot");
-                }}
-              >
-                Viral
-              </a>
+            <li
+              onClick={() => {
+                changeSort("hot");
+              }}
+            >
+              <a>Viral</a>
             </li>
-            <li>
-              <a
-                onClick={() => {
-                  changeSort("top");
-                }}
-              >
-                Top
-              </a>
+            <li
+              onClick={() => {
+                changeSort("top");
+              }}
+            >
+              <a>Top</a>
             </li>
-            <li>
-              <a
-                onClick={() => {
-                  changeSort("time");
-                }}
-              >
-                Time
-              </a>
+            <li
+              onClick={() => {
+                changeSort("time");
+              }}
+            >
+              <a>Time</a>
             </li>
           </ul>
         </li>
         <li>
           <a>Window</a>
           <ul className="submenu">
-            <li>
-              <a
-                onClick={() => {
-                  changeWindow("day");
-                }}
-              >
-                Day
-              </a>
+            <li
+              onClick={() => {
+                changeWindow("day");
+              }}
+            >
+              <a>Day</a>
             </li>
-            <li>
-              <a
-                onClick={() => {
-                  changeWindow("week");
-                }}
-              >
-                Week
-              </a>
+            <li
+              onClick={() => {
+                changeWindow("week");
+              }}
+            >
+              <a>Week</a>
             </li>
-            <li>
-              <a
-                onClick={() => {
-                  changeWindow("month");
-                }}
-              >
-                Month
-              </a>
+            <li
+              onClick={() => {
+                changeWindow("month");
+              }}
+            >
+              <a>Month</a>
             </li>
-            <li>
-              <a
-                onClick={() => {
-                  changeWindow("year");
-                }}
-              >
-                Year
-              </a>
+            <li
+              onClick={() => {
+                changeWindow("year");
+              }}
+            >
+              <a>Year</a>
             </li>
-            <li>
-              <a
-                onClick={() => {
-                  changeWindow("all");
-                }}
-              >
-                All
-              </a>
+            <li
+              onClick={() => {
+                changeWindow("all");
+              }}
+            >
+              <a>All</a>
             </li>
           </ul>
         </li>
