@@ -3,7 +3,11 @@ import React, { useEffect } from "react";
 // import axios from "axios";
 import { useDispatch } from "react-redux";
 // import { useSelector } from "react-redux";
-import { setImages, setProducts } from "../redux/actions/productsActions";
+import {
+  setGallery,
+  setImages,
+  setProducts,
+} from "../redux/actions/productsActions";
 import ProductComponent from "./ProductComponent";
 import Menu from "./Menu";
 
@@ -40,8 +44,8 @@ const ProductPage = () => {
       .then((response) => response.json())
       .catch((error) => console.log("error", error));
     const post = await result.data;
-    // dispatch(setProducts(post));
-    console.log(post);
+    dispatch(setGallery(post));
+    // console.log(post);
     const img = await post.map((i) => {
       const { images } = i;
       const arr = [].concat(images);
@@ -58,7 +62,7 @@ const ProductPage = () => {
     });
     dispatch(setProducts(imagen));
     // dispatch(setImages(img));
-    console.log(imagen);
+    // console.log(imagen);
   };
 
   useEffect(() => {

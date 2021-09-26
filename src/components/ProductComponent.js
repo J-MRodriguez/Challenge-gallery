@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 const ProductComponent = () => {
   const gallery = useSelector((state) => state.allProducts.products);
 
-  console.log(gallery);
+  // console.log(gallery);
 
   const renderList = gallery.map((product) => {
     if (product === undefined) {
