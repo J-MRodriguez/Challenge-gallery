@@ -6,14 +6,14 @@ import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import {
   selectedProduct,
-  // removeSelectedProduct,
+  removeSelectedProduct,
 } from "../redux/actions/productsActions";
 
 const ProductDetails = () => {
   const { productId } = useParams();
   let product = useSelector((state) => state.product);
 
-  const { title } = product;
+  const { description } = product;
   const dispatch = useDispatch();
 
   const requestOptions = {
@@ -38,18 +38,17 @@ const ProductDetails = () => {
         console.log("Err: ", err);
       });
     const data = response.data;
+    console.log(data);
     dispatch(selectedProduct(data));
   };
 
-  // useEffect(() => {
-  //   if (productId && productId !== "") fetchProductDetail(productId);
-  //   return () => {
-  //     dispatch(removeSelectedProduct());
-  //   };
-  // }, [productId]);
   useEffect(() => {
-    fetchProductDetail(productId);
-  }, []);
+    if (productId && productId !== "") fetchProductDetail(productId);
+    return () => {
+      dispatch(removeSelectedProduct());
+    };
+  }, [productId]);
+
   return (
     <div className="ui grid container">
       {Object.keys(product).length === 0 ? (
@@ -67,7 +66,7 @@ const ProductDetails = () => {
                 />
               </div>
               <div className="column rp">
-                <h1>{title}</h1>
+                <h1>{description}</h1>
                 <h2>{/* <a className="ui teal tag label">${price}</a> */}</h2>
                 <h3 className="ui brown block header">"header"</h3>
                 <p>"description"</p>
