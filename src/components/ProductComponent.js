@@ -10,11 +10,11 @@ const ProductComponent = () => {
   console.log(gallery);
 
   const renderList = gallery.map((product, i) => {
-    const { id, link, description } = product[i][0];
+    const { link, description } = product[i][0];
 
     return (
-      <div className="four wide column" key={id}>
-        <Link to={`/product/${id}`}>
+      <div className="four wide column" key={description}>
+        <Link to={`/product/${description}`}>
           <div className="ui link cards">
             <div className="card">
               <div className="image">
