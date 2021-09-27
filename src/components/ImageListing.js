@@ -1,18 +1,11 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect } from "react";
-// import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  // setGallery,
-  setImages,
-  setProducts,
-} from "../redux/actions/productsActions";
-import ProductComponent from "./ProductComponent";
+import { setGallery, setImages } from "../redux/actions/productsActions";
+import ImageComponent from "./ImageComponent";
 import Menu from "./Menu";
 
-// import * as data from "./../Data/gallery.json";
-
-const ProductPage = () => {
+const GalleryPage = () => {
   const dispatch = useDispatch();
   const section = useSelector((state) => state.section);
   const sort = useSelector((state) => state.sort);
@@ -29,9 +22,6 @@ const ProductPage = () => {
       mature: "false",
       album_previews: "false",
     },
-    // headers: myHeaders,
-    // // body: formdata,
-    // redirect: "follow",
   };
 
   const fetchGallery = async () => {
@@ -42,8 +32,7 @@ const ProductPage = () => {
       .then((response) => response.json())
       .catch((error) => console.log("error", error));
     const post = await result.data;
-    // dispatch(setGallery(post));
-    // console.log(post);
+
     const img = await post.map((i) => {
       const { images } = i;
       const arr = [].concat(images);
@@ -58,9 +47,7 @@ const ProductPage = () => {
       const test = e[0];
       return test;
     });
-    dispatch(setProducts(imagen));
-    // dispatch(setImages(img));
-    // console.log(imagen);
+    dispatch(setGallery(imagen));
   };
 
   useEffect(() => {
@@ -74,9 +61,9 @@ const ProductPage = () => {
   return (
     <div className="ui grid container">
       <Menu />
-      <ProductComponent />
+      <ImageComponent />
     </div>
   );
 };
 
-export default ProductPage;
+export default GalleryPage;

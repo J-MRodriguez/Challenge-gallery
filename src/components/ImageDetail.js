@@ -6,19 +6,15 @@ import {
   FaRegHandPointDown,
   FaRegFlag,
 } from "react-icons/fa";
-// import axios from "axios";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  selectedProduct,
-  removeSelectedProduct,
-} from "../redux/actions/productsActions";
+import { selectedImage } from "../redux/actions/productsActions";
 
-const ProductDetails = () => {
-  const { productId } = useParams();
-  let product = useSelector((state) => state.product);
+const ImageDetails = () => {
+  const { imageId } = useParams();
+  let img = useSelector((state) => state.image);
 
-  const { description, link, type } = product;
+  const { description, link, type } = img;
   const dispatch = useDispatch();
 
   const requestOptions = {
@@ -31,12 +27,9 @@ const ProductDetails = () => {
       mature: "false",
       album_previews: "false",
     },
-    //   // headers: myHeaders,
-    //   // // body: formdata,
-    //   // redirect: "follow",
   };
 
-  const fetchProductDetail = async (id) => {
+  const fetchImageDetail = async (id) => {
     const response = await fetch(
       `https://api.imgur.com/3/image/${id}`,
       requestOptions
@@ -46,16 +39,12 @@ const ProductDetails = () => {
         console.log("Err: ", err);
       });
     const data = await response.data;
-    // console.log(data);
-    dispatch(selectedProduct(data));
+    dispatch(selectedImage(data));
   };
 
   useEffect(() => {
-    if (productId && productId !== "") fetchProductDetail(productId);
-    return () => {
-      dispatch(removeSelectedProduct());
-    };
-  }, [productId]);
+    if (imageId && imageId !== "") fetchImageDetail(imageId);
+  }, [imageId]);
 
   let upvotes = Math.floor(Math.random() * (1000 - 50)) + 50;
   let downvotes = Math.floor(Math.random() * (100 - 10)) + 10;
@@ -63,7 +52,7 @@ const ProductDetails = () => {
 
   return (
     <div className="ui grid container">
-      {Object.keys(product).length === 0 ? (
+      {Object.keys(img).length === 0 ? (
         <div>...Loading</div>
       ) : (
         <div className="ui placeholder segment">
@@ -85,9 +74,7 @@ const ProductDetails = () => {
               </div>
               <div className="column rp">
                 <h1>{description}</h1>
-                <h2>{/* <a className="ui teal tag label">${price}</a> */}</h2>
                 <h3 className="ui brown block header">{description}</h3>
-                {/* <p>"description"</p> */}
                 <div className="ui vertical animated button" tabIndex="0">
                   <div className="hidden content">Up Votes: {upvotes}</div>
                   <div className="visible content">
@@ -115,4 +102,4 @@ const ProductDetails = () => {
   );
 };
 
-export default ProductDetails;
+export default ImageDetails;

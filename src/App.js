@@ -1,9 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import ProductListing from "./components/ProductListing";
+import GalleryPage from "./components/ImageListing";
 import Header from "./components/Header";
 import "./App.css";
-import ProductDetails from "./components/ProductDetail";
+import ImageDetails from "./components/ImageDetail";
 
 function App() {
   return (
@@ -11,8 +11,8 @@ function App() {
       <Router>
         <Header />
         <Switch>
-          <Route path="/" exact component={ProductListing} />
-          <Route path="/product/:productId" component={ProductDetails} />
+          <Route path="/" exact component={GalleryPage} />
+          <Route path="/product/:imageId" component={ImageDetails} />
           <Route>404 Not Found!</Route>
         </Switch>
       </Router>

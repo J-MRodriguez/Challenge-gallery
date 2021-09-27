@@ -1,7 +1,6 @@
 import { combineReducers } from "redux";
 import {
-  productsReducer,
-  selectedProductsReducer,
+  selectedImageReducer,
   galleryReducer,
   imagesReducer,
   sectionReducer,
@@ -16,10 +15,6 @@ const reducers = combineReducers({
   sort: sortReducer,
   window: windowReducer,
   viral: showViralReducer,
-
-  /////////////////////////////////
-
-  allProducts: productsReducer,
-  product: selectedProductsReducer,
+  image: selectedImageReducer,
 });
 export default reducers;

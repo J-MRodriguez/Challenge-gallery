@@ -13,8 +13,13 @@ export const setImages = (images) => {
     payload: images,
   };
 };
+export const selectedImage = (product) => {
+  return {
+    type: ActionTypes.SELECTED_IMAGE,
+    payload: product,
+  };
+};
 
-///////////////////////////////////
 export const changeViral = (viral) => {
   switch (viral) {
     case "on":
@@ -65,25 +70,4 @@ export const changeWindow = (window) => {
     default:
       break;
   }
-};
-
-/////////////////////////////////////
-
-export const setProducts = (products) => {
-  return {
-    type: ActionTypes.SET_PRODUCTS,
-    payload: products,
-  };
-};
-
-export const selectedProduct = (product) => {
-  return {
-    type: ActionTypes.SELECTED_PRODUCT,
-    payload: product,
-  };
-};
-export const removeSelectedProduct = () => {
-  return {
-    type: ActionTypes.REMOVE_SELECTED_PRODUCT,
-  };
 };

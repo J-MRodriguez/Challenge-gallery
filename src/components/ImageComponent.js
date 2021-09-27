@@ -2,16 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 
-const ProductComponent = () => {
-  const gallery = useSelector((state) => state.allProducts.products);
-
-  // console.log(gallery);
-
-  const renderList = gallery.map((product) => {
-    if (product === undefined || product.description === null) {
+const ImageComponent = () => {
+  const gallery = useSelector((state) => state.gallery.gallery);
+  const renderList = gallery.map((image) => {
+    if (image === undefined || image.description === null) {
       return console.log("undefine");
     } else {
-      const { id, link, description, type } = product;
+      const { id, link, description, type } = image;
 
       return (
         <div className="four wide column" key={id}>
@@ -26,11 +23,7 @@ const ProductComponent = () => {
                   )}
                 </div>
                 <div className="content">
-                  {description === null ? (
-                    <div className="header">Check this post</div>
-                  ) : (
-                    <div className="header">{description}</div>
-                  )}
+                  <div className="header">{description}</div>
                 </div>
               </div>
             </div>
@@ -43,4 +36,4 @@ const ProductComponent = () => {
   return <>{renderList}</>;
 };
 
-export default ProductComponent;
+export default ImageComponent;

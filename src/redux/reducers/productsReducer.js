@@ -25,6 +25,16 @@ export const imagesReducer = (state = initialStateImg, { type, payload }) => {
       return state;
   }
 };
+
+export const selectedImageReducer = (state = {}, { type, payload }) => {
+  switch (type) {
+    case ActionTypes.SELECTED_IMAGE:
+      return { ...state, ...payload };
+    default:
+      return state;
+  }
+};
+
 //////////////////////////////////////
 export const sectionReducer = (state = "hot", { type }) => {
   switch (type) {
@@ -74,32 +84,6 @@ export const showViralReducer = (state = "true", { type }) => {
       return "true";
     case ActionTypes.CHANGE_SHOWVIRALOFF:
       return "false";
-    default:
-      return state;
-  }
-};
-
-/////////////////////////////////////
-
-const intialState = {
-  products: [],
-};
-
-export const productsReducer = (state = intialState, { type, payload }) => {
-  switch (type) {
-    case ActionTypes.SET_PRODUCTS:
-      return { ...state, products: payload };
-    default:
-      return state;
-  }
-};
-
-export const selectedProductsReducer = (state = {}, { type, payload }) => {
-  switch (type) {
-    case ActionTypes.SELECTED_PRODUCT:
-      return { ...state, ...payload };
-    case ActionTypes.REMOVE_SELECTED_PRODUCT:
-      return {};
     default:
       return state;
   }
